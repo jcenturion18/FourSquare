@@ -53,6 +53,10 @@ extension MapViewController : LocationServiceDelegate{
 }
 
 extension MapViewController : MapPresenterDelegate{
+    func showDetaillInfo(forVenue venue: Venue) {
+        
+    }
+    
     func mapCenter(location: CLLocation) {
         fetchVenues(onLocation: location)
     }
