@@ -34,7 +34,7 @@ class MapPresenter: NSObject {
     
     private func addAnnotationsToMap(venues: [Venue]){
         venues.forEach { (venue) in
-            let venueAnnotation = VenueAnnotation(coordinate: CLLocationCoordinate2D(with: venue.location))
+            let venueAnnotation = VenueAnnotation(venue: venue)
             venueAnnotations.append(venueAnnotation)
         }
         DispatchQueue.main.async {
@@ -53,7 +53,6 @@ extension MapPresenter : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? VenueAnnotation{
-            debugPrint(annotation)
         }
     }
 }
