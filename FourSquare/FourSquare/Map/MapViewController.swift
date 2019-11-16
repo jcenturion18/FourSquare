@@ -16,10 +16,12 @@ class MapViewController: UIViewController {
     
     let locationService:LocationService
     let mapPresenter:MapPresenter
+    let fourSquareService:FourSquareService
     
-    init(locationService:LocationService = LocationService(), mapPresenter:MapPresenter = MapPresenter()){
+    init(locationService:LocationService = LocationService(), mapPresenter:MapPresenter = MapPresenter(), fourSquareService:FourSquareService = FourSquareService()){
         self.locationService = locationService
         self.mapPresenter = mapPresenter
+        self.fourSquareService = fourSquareService
         
         super.init(nibName: nil, bundle: nil)
         self.locationService.delegate = self
@@ -42,7 +44,7 @@ extension MapViewController : LocationServiceDelegate{
     func updatedUserLocation(_ location: CLLocation) {
         mapPresenter.center(onLocation: location)
         
-        FourSquareService().venues(forLocation: location, completion: { [weak self] venues, error in
+        fourSquareService.venues(forLocation: location, completion: { [weak self] venues, error in
             if (venues != nil) {
                 self?.mapPresenter.update(with: venues)
             }
