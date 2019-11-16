@@ -178,9 +178,9 @@
 		6DFE17AF237FA05C001D7190 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				6DFE17D523806AD9001D7190 /* Annotation */,
 				6DFE1795237DD649001D7190 /* MapViewController.swift */,
 				6DFE1796237DD649001D7190 /* MapViewController.xib */,
-				6DFE17B0237FA06C001D7190 /* VenueAnnotation.swift */,
 				6DFE17B72380140F001D7190 /* MapPresenter.swift */,
 			);
 			path = Map;
@@ -229,6 +229,14 @@
 				6DFE17CD2380631D001D7190 /* MapViewControllerTests.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		6DFE17D523806AD9001D7190 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				6DFE17B0237FA06C001D7190 /* VenueAnnotation.swift */,
+			);
+			path = Annotation;
 			sourceTree = "<group>";
 		};
 		D59C2465C973740CA0A2FADD /* Pods */ = {
