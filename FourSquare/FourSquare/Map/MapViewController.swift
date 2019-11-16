@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import PureLayout
 
 class MapViewController: UIViewController {
        
@@ -18,11 +19,14 @@ class MapViewController: UIViewController {
     let locationService:LocationService
     let mapPresenter:MapPresenter
     let fourSquareService:FourSquareService
+    let inMapDetailPresenter:InMapDetailPresenter
     
-    init(locationService:LocationService = LocationService(), mapPresenter:MapPresenter = MapPresenter(), fourSquareService:FourSquareService = FourSquareService()){
+    init(locationService:LocationService = LocationService(), mapPresenter:MapPresenter = MapPresenter(), fourSquareService:FourSquareService = FourSquareService()
+        , inMapDetailPresenter:InMapDetailPresenter = InMapDetailPresenter()){
         self.locationService = locationService
         self.mapPresenter = mapPresenter
         self.fourSquareService = fourSquareService
+        self.inMapDetailPresenter = inMapDetailPresenter
         
         super.init(nibName: nil, bundle: nil)
         self.locationService.delegate = self
@@ -37,6 +41,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         mapPresenter.mapView = mapView
         mapPresenter.showMoreViewContainer = showMoreViewContainer
+        inMapDetailPresenter.setUp(parentView: view)
         locationService.requestAuth()
     }
     
@@ -53,8 +58,12 @@ extension MapViewController : LocationServiceDelegate{
 }
 
 extension MapViewController : MapPresenterDelegate{
+    func hideDetaillInfo() {
+        inMapDetailPresenter.hideDetail()
+    }
+    
     func showDetaillInfo(forVenue venue: Venue) {
-        
+        inMapDetailPresenter.showDetail(withVenue: venue)
     }
     
     func mapCenter(location: CLLocation) {
@@ -71,3 +80,4 @@ extension MapViewController{
         })
     }
 }
+

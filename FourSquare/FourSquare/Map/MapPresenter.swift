@@ -66,6 +66,10 @@ class MapPresenter: NSObject {
 
 extension MapPresenter : MKMapViewDelegate {
     
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        delegate?.hideDetaillInfo()
+    }
+    
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = mapView.centerCoordinate
         

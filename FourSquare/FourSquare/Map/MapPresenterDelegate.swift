@@ -12,4 +12,5 @@ import MapKit
 protocol MapPresenterDelegate {
     func mapCenter(location:CLLocation) -> Void
     func showDetaillInfo(forVenue venue:Venue) -> Void
+    func hideDetaillInfo() -> Void
 }
