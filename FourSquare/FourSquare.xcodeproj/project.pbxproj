@@ -37,6 +37,10 @@
 		6DFE17E823807CB9001D7190 /* ShowMoreButtonStateHide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFE17E623807CB9001D7190 /* ShowMoreButtonStateHide.swift */; };
 		6DFE17E923807CB9001D7190 /* ShowMoreButtonStateShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFE17E723807CB9001D7190 /* ShowMoreButtonStateShow.swift */; };
 		6DFE17EB23809A2E001D7190 /* ShowMoreButtonStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFE17EA23809A2E001D7190 /* ShowMoreButtonStateTests.swift */; };
+		6DFE17EE2380A281001D7190 /* InMapDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFE17ED2380A281001D7190 /* InMapDetail.swift */; };
+		6DFE17F02380A291001D7190 /* InMapDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE17EF2380A291001D7190 /* InMapDetail.xib */; };
+		6DFE17F22380A8EC001D7190 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFE17F12380A8EC001D7190 /* UIView+Animation.swift */; };
+		6DFE17F42380A967001D7190 /* InMapDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFE17F32380A967001D7190 /* InMapDetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		6DFE17E623807CB9001D7190 /* ShowMoreButtonStateHide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMoreButtonStateHide.swift; sourceTree = "<group>"; };
 		6DFE17E723807CB9001D7190 /* ShowMoreButtonStateShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMoreButtonStateShow.swift; sourceTree = "<group>"; };
 		6DFE17EA23809A2E001D7190 /* ShowMoreButtonStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreButtonStateTests.swift; sourceTree = "<group>"; };
+		6DFE17ED2380A281001D7190 /* InMapDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMapDetail.swift; sourceTree = "<group>"; };
+		6DFE17EF2380A291001D7190 /* InMapDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InMapDetail.xib; sourceTree = "<group>"; };
+		6DFE17F12380A8EC001D7190 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		6DFE17F32380A967001D7190 /* InMapDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMapDetailPresenter.swift; sourceTree = "<group>"; };
 		85608C2EC03A34F54EFE9AED /* Pods-FourSquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourSquare.debug.xcconfig"; path = "Target Support Files/Pods-FourSquare/Pods-FourSquare.debug.xcconfig"; sourceTree = "<group>"; };
 		97084CA108ED696198A38088 /* Pods-FourSquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourSquare.release.xcconfig"; path = "Target Support Files/Pods-FourSquare/Pods-FourSquare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +198,7 @@
 		6DFE17AF237FA05C001D7190 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				6DFE17EC2380A267001D7190 /* InMapDetail */,
 				6DFE17E323807C6B001D7190 /* ShowMoreButtonState */,
 				6DFE17D523806AD9001D7190 /* Annotation */,
 				6DFE1795237DD649001D7190 /* MapViewController.swift */,
@@ -206,6 +215,7 @@
 				6DFE17B3237FA128001D7190 /* CLLocationCoordinate2D+Location.swift */,
 				6DFE17BD2380413B001D7190 /* CLLocation+Utils.swift */,
 				6DFE17D823806ED9001D7190 /* CALayer+Shadow.swift */,
+				6DFE17F12380A8EC001D7190 /* UIView+Animation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +273,16 @@
 				6DFE17E423807C7B001D7190 /* ShowMoreButtonStateProtocol.swift */,
 			);
 			path = ShowMoreButtonState;
+			sourceTree = "<group>";
+		};
+		6DFE17EC2380A267001D7190 /* InMapDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6DFE17ED2380A281001D7190 /* InMapDetail.swift */,
+				6DFE17EF2380A291001D7190 /* InMapDetail.xib */,
+				6DFE17F32380A967001D7190 /* InMapDetailPresenter.swift */,
+			);
+			path = InMapDetail;
 			sourceTree = "<group>";
 		};
 		D59C2465C973740CA0A2FADD /* Pods */ = {
@@ -361,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DFE17F02380A291001D7190 /* InMapDetail.xib in Resources */,
 				6DFE1780237DD264001D7190 /* LaunchScreen.storyboard in Resources */,
 				6DFE1799237DD6AC001D7190 /* MapViewController.xib in Resources */,
 				6DFE177D237DD264001D7190 /* Assets.xcassets in Resources */,
@@ -445,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DFE17F42380A967001D7190 /* InMapDetailPresenter.swift in Sources */,
 				6DFE17A8237F9522001D7190 /* SearchResponse.swift in Sources */,
 				6DFE17AC237F95A7001D7190 /* Venue.swift in Sources */,
 				6DFE17B62380116E001D7190 /* LocationService.swift in Sources */,
@@ -455,12 +477,14 @@
 				6DFE1776237DD260001D7190 /* AppDelegate.swift in Sources */,
 				6DFE17AA237F9564001D7190 /* SearchResult.swift in Sources */,
 				6DFE179D237E2DAC001D7190 /* FourSquareService.swift in Sources */,
+				6DFE17EE2380A281001D7190 /* InMapDetail.swift in Sources */,
 				6DFE179A237DD6AF001D7190 /* MapViewController.swift in Sources */,
 				6DFE17E223807942001D7190 /* MapPresenterDelegate.swift in Sources */,
 				6DFE17B1237FA06C001D7190 /* VenueAnnotation.swift in Sources */,
 				6DFE17B4237FA128001D7190 /* CLLocationCoordinate2D+Location.swift in Sources */,
 				6DFE17E523807C7B001D7190 /* ShowMoreButtonStateProtocol.swift in Sources */,
 				6DFE17E823807CB9001D7190 /* ShowMoreButtonStateHide.swift in Sources */,
+				6DFE17F22380A8EC001D7190 /* UIView+Animation.swift in Sources */,
 				6DFE17AE237F96AB001D7190 /* Location.swift in Sources */,
 				6DFE17BE2380413B001D7190 /* CLLocation+Utils.swift in Sources */,
 			);
