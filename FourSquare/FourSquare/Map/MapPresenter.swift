@@ -19,7 +19,22 @@ class MapPresenter: NSObject {
         }
     }
     
+    weak var showMoreViewContainer: UIView!{
+        didSet{
+            showMoreViewContainer.layer.applyShadow()
+            showMoreViewContainer.alpha = 0
+            _ = ShowMoreButtonStateHide().apply(showMoreViewContainer)
+        }
+    }
+    
+    var firsTime = true
     private var venueAnnotations:[MKAnnotation]
+    
+    var currentMapLocationCenter:CLLocation?
+    
+    var showMorebuttonState:ShowMoreButtonStateProtocol?
+    
+    var delegate:MapPresenterDelegate?
     
     override init() {
         self.venueAnnotations = [MKAnnotation]()
@@ -51,8 +66,28 @@ class MapPresenter: NSObject {
 
 extension MapPresenter : MKMapViewDelegate {
     
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = mapView.centerCoordinate
+        
+        if (!firsTime){
+            showMorebuttonState = ShowMoreButtonStateShow().apply(showMoreViewContainer)
+        }
+        firsTime = false
+        currentMapLocationCenter = CLLocation(latitude: center.latitude, longitude: center.longitude)
+    }
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? VenueAnnotation{
+            delegate?.showDetaillInfo(forVenue: annotation.venue)
+        }
+    }
+}
+
+extension MapPresenter{
+    func showMoreHereTapped() {
+        showMorebuttonState = showMorebuttonState?.apply(showMoreViewContainer)
+        if let currentMapLocationCenter = self.currentMapLocationCenter {
+            delegate?.mapCenter(location: currentMapLocationCenter)
         }
     }
 }
