@@ -21,9 +21,10 @@ class FourSquareService {
     func venues(forLocation location:CLLocation,  completion: @escaping ([Venue]?, Error?) -> Void ){
         
         var params = Parameters()
-        params["ll"] = "40.74224,-73.99386"
+        params["ll"] = location.toString()
         params["client_id"] = "FS1TPI1BMSFSJ020DA4NH1PXD1HW50GYDQYYGQMTLPPCV1YE"
         params["client_secret"] = "55V42KYJCFKS0AH3EFGI4RKGURAS2KBH3MZG2OV1PE5HONQV"
+        params["radius"] = 2000
         params["v"] = actualDate()
         
         sessionManager.request("https://api.foursquare.com/v2/venues/search", method: .get, parameters: params).responseJSON { response in
