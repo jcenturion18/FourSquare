@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapPresenter: NSObject, MKMapViewDelegate {
+class MapPresenter: NSObject {
 
     weak var mapView: MKMapView!{
         didSet{
@@ -49,25 +49,12 @@ class MapPresenter: NSObject, MKMapViewDelegate {
     }
 }
 
-extension MapPresenter {
-    internal func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        //this keeps the user location point as a default blue dot.
-        if annotation is MKUserLocation { return nil }
-        
-        //setup annotation view for map - we can fully customize the marker
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "VenueAnnotationView") as? MKMarkerAnnotationView
-        
-        //setup annotation view
-        if annotationView == nil {
-            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "VenueAnnotationView")
-            annotationView?.canShowCallout = false
-            annotationView?.animatesWhenAdded = true
-            annotationView?.markerTintColor = UIColor.orange
-            annotationView?.isHighlighted = true
-        } else {
-            annotationView?.annotation = annotation
+extension MapPresenter : MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let annotation = view.annotation as? VenueAnnotation{
+            debugPrint(annotation)
         }
-        return annotationView
     }
 }
 
