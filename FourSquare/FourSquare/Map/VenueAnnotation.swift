@@ -12,7 +12,10 @@ import MapKit
 class VenueAnnotation: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
     
-    init(coordinate: CLLocationCoordinate2D) {
-        self.coordinate = coordinate
+    let venue:Venue
+    
+    init(venue: Venue) {
+        self.coordinate = CLLocationCoordinate2D(with: venue.location)
+        self.venue = venue
     }
 }
