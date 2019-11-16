@@ -15,6 +15,7 @@ class MapPresenter: NSObject, MKMapViewDelegate {
         didSet{
             mapView.showsUserLocation = true
             mapView.delegate = self
+            mapView.mapType = .mutedStandard
         }
     }
     
@@ -43,12 +44,12 @@ class MapPresenter: NSObject, MKMapViewDelegate {
     
     func center(onLocation location:CLLocation){
         let center = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         self.mapView.setRegion(region, animated: true)
     }
 }
 
-extension MapViewController: MKMapViewDelegate {
+extension MapPresenter {
     internal func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         //this keeps the user location point as a default blue dot.
         if annotation is MKUserLocation { return nil }
