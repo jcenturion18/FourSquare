@@ -7,7 +7,19 @@
 //
 
 import UIKit
+import XCTest
+import MapKit
+@testable import FourSquare
 
 class MapPresenterMock: MapPresenter {
-
+    let expectation:XCTestExpectation?
+    init(expectation:XCTestExpectation?) {
+        self.expectation = expectation
+    }
+    
+    override func center(onLocation location: CLLocation) {}
+    
+    override func update(with venues: [Venue]?) {
+        expectation?.fulfill()
+    }
 }

@@ -12,12 +12,13 @@ import XCTest
 
 class CLLocationManagerMock: CLLocationManager {
 
-    let expectation:XCTestExpectation
-    init(expectation:XCTestExpectation) {
+    let expectation:XCTestExpectation?
+    init(expectation:XCTestExpectation?) {
         self.expectation = expectation
     }
     
     override func stopUpdatingLocation() {
-        expectation.fulfill()
+        expectation?.fulfill()
     }
+    override func requestWhenInUseAuthorization() {}
 }
