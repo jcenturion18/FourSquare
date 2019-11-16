@@ -91,7 +91,7 @@ extension MapPresenter{
     func showMoreHereTapped() {
         showMorebuttonState = showMorebuttonState?.apply(showMoreViewContainer)
         if let currentMapLocationCenter = self.currentMapLocationCenter {
-            delegate?.mapCenter(location: currentMapLocationCenter)
+            delegate?.fetchVenuesOnMapCenter(location: currentMapLocationCenter)
         }
     }
 }

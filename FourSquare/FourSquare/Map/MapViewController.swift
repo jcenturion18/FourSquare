@@ -66,7 +66,7 @@ extension MapViewController : MapPresenterDelegate{
         inMapDetailPresenter.showDetail(withVenue: venue)
     }
     
-    func mapCenter(location: CLLocation) {
+    func fetchVenuesOnMapCenter(location: CLLocation) {
         fetchVenues(onLocation: location)
     }
 }

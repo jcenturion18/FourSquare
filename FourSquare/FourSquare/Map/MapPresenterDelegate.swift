@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol MapPresenterDelegate {
-    func mapCenter(location:CLLocation) -> Void
+    func fetchVenuesOnMapCenter(location:CLLocation) -> Void
     func showDetaillInfo(forVenue venue:Venue) -> Void
     func hideDetaillInfo() -> Void
 }
