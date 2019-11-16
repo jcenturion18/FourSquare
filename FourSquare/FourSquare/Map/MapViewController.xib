@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="FourSquare" customModuleProvider="target">
             <connections>
                 <outlet property="mapView" destination="XXy-cb-Pti" id="WJ5-2v-ubl"/>
+                <outlet property="showMoreViewContainer" destination="kEs-7V-30t" id="otQ-aa-aev"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,15 +25,45 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XXy-cb-Pti">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </mapView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEs-7V-30t">
+                    <rect key="frame" x="129" y="60" width="156.5" height="37"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show more here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ7-HV-g7P">
+                            <rect key="frame" x="16" y="8" width="124.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="RJ7-HV-g7P" secondAttribute="trailing" constant="16" id="2eQ-y5-bH4"/>
+                        <constraint firstItem="RJ7-HV-g7P" firstAttribute="leading" secondItem="kEs-7V-30t" secondAttribute="leading" constant="16" id="RMp-A6-kwx"/>
+                        <constraint firstItem="RJ7-HV-g7P" firstAttribute="top" secondItem="kEs-7V-30t" secondAttribute="top" constant="8" id="g0v-Ya-Y9P"/>
+                        <constraint firstAttribute="bottom" secondItem="RJ7-HV-g7P" secondAttribute="bottom" constant="8" id="jR7-fQ-Ujp"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="uMO-d8-0rh" appends="YES" id="JNB-hW-Psa"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="kEs-7V-30t" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="5UA-ao-7Ti"/>
+                <constraint firstItem="kEs-7V-30t" firstAttribute="centerX" secondItem="XXy-cb-Pti" secondAttribute="centerX" id="6rr-xe-cOD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XXy-cb-Pti" secondAttribute="trailing" id="CzM-ab-20B"/>
                 <constraint firstAttribute="bottom" secondItem="XXy-cb-Pti" secondAttribute="bottom" id="ZCe-TV-qNt"/>
                 <constraint firstItem="XXy-cb-Pti" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="acM-BO-sVg"/>
                 <constraint firstItem="XXy-cb-Pti" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ybA-NP-2DC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="42.857142857142854"/>
         </view>
+        <tapGestureRecognizer id="uMO-d8-0rh">
+            <connections>
+                <action selector="showMoreHereTapped:" destination="-1" id="1QF-l7-UrG"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

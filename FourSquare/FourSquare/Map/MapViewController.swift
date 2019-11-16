@@ -13,6 +13,7 @@ import MapKit
 class MapViewController: UIViewController {
        
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var showMoreViewContainer: UIView!
     
     let locationService:LocationService
     let mapPresenter:MapPresenter
@@ -25,6 +26,7 @@ class MapViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         self.locationService.delegate = self
+        self.mapPresenter.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,17 +35,31 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         mapPresenter.mapView = mapView
+        mapPresenter.showMoreViewContainer = showMoreViewContainer
         locationService.requestAuth()
-        
+    }
+    
+    @IBAction func showMoreHereTapped(_ sender: Any) {
+        mapPresenter.showMoreHereTapped()
     }
 }
 
 extension MapViewController : LocationServiceDelegate{
     func updatedUserLocation(_ location: CLLocation) {
         mapPresenter.center(onLocation: location)
-        
+        fetchVenues(onLocation: location)
+    }
+}
+
+extension MapViewController : MapPresenterDelegate{
+    func mapCenter(location: CLLocation) {
+        fetchVenues(onLocation: location)
+    }
+}
+
+extension MapViewController{
+    func fetchVenues(onLocation location:CLLocation){
         fourSquareService.venues(forLocation: location, completion: { [weak self] venues, error in
             if (venues != nil) {
                 self?.mapPresenter.update(with: venues)
