@@ -73,7 +73,7 @@ extension MapViewController : MapPresenterDelegate{
 
 extension MapViewController{
     func fetchVenues(onLocation location:CLLocation){
-        fourSquareService.venues(forLocation: location, completion: { [weak self] venues, error in
+        fourSquareService.fetchVenues(forLocation: location, completion: { [weak self] venues, error in
             if (venues != nil) {
                 self?.mapPresenter.update(with: venues)
             }

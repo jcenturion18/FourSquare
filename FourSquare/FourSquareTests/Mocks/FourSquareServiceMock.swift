@@ -11,7 +11,7 @@ import MapKit
 @testable import FourSquare
 
 class FourSquareServiceMock: FourSquareService {
-    override func venues(forLocation location: CLLocation, completion: @escaping ([Venue]?, Error?) -> Void) {
+    override func fetchVenues(forLocation location: CLLocation, completion: @escaping ([Venue]?, Error?) -> Void) {
         let venue = Venue(id: "id", name: "name", location: Location(lat: 40, lng: 40, address: nil, city: nil, state: nil, country: nil, formattedAddress:nil))
         completion([venue], nil)
     }
