@@ -10,6 +10,8 @@
 		26C01CC5B913EFE9D30235D5 /* Pods_FourSquareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9B4D953B70312D76E4966 /* Pods_FourSquareTests.framework */; };
 		5E3A4E796BB7125A9DF04FA8 /* Pods_FourSquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A26F7EE69B3FBEE62D3900A /* Pods_FourSquare.framework */; };
 		6D9E90652380B7680019BA6E /* InMapDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E90642380B7680019BA6E /* InMapDetailPresenterTests.swift */; };
+		6D9E90672380C7F20019BA6E /* VenueDetailResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E90662380C7F20019BA6E /* VenueDetailResult.swift */; };
+		6D9E90692380C82C0019BA6E /* VenueDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E90682380C82C0019BA6E /* VenueDetailResponse.swift */; };
 		6DFE1776237DD260001D7190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFE1775237DD260001D7190 /* AppDelegate.swift */; };
 		6DFE177D237DD264001D7190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE177C237DD264001D7190 /* Assets.xcassets */; };
 		6DFE1780237DD264001D7190 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE177E237DD264001D7190 /* LaunchScreen.storyboard */; };
@@ -60,6 +62,8 @@
 		48A9B4D953B70312D76E4966 /* Pods_FourSquareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourSquareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B92748DA6A096BC3531C79A /* Pods-FourSquareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourSquareTests.release.xcconfig"; path = "Target Support Files/Pods-FourSquareTests/Pods-FourSquareTests.release.xcconfig"; sourceTree = "<group>"; };
 		6D9E90642380B7680019BA6E /* InMapDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMapDetailPresenterTests.swift; sourceTree = "<group>"; };
+		6D9E90662380C7F20019BA6E /* VenueDetailResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailResult.swift; sourceTree = "<group>"; };
+		6D9E90682380C82C0019BA6E /* VenueDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailResponse.swift; sourceTree = "<group>"; };
 		6DFE1772237DD260001D7190 /* FourSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DFE1775237DD260001D7190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DFE177C237DD264001D7190 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 				6DFE17A7237F9522001D7190 /* SearchResponse.swift */,
 				6DFE17AB237F95A7001D7190 /* Venue.swift */,
 				6DFE17AD237F96AB001D7190 /* Location.swift */,
+				6D9E90662380C7F20019BA6E /* VenueDetailResult.swift */,
+				6D9E90682380C82C0019BA6E /* VenueDetailResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -474,6 +480,7 @@
 				6DFE17AC237F95A7001D7190 /* Venue.swift in Sources */,
 				6DFE17B62380116E001D7190 /* LocationService.swift in Sources */,
 				6DFE17D923806ED9001D7190 /* CALayer+Shadow.swift in Sources */,
+				6D9E90692380C82C0019BA6E /* VenueDetailResponse.swift in Sources */,
 				6DFE17B82380140F001D7190 /* MapPresenter.swift in Sources */,
 				6DFE17BC23801829001D7190 /* LocationServiceDelegate.swift in Sources */,
 				6DFE17E923807CB9001D7190 /* ShowMoreButtonStateShow.swift in Sources */,
@@ -488,6 +495,7 @@
 				6DFE17E523807C7B001D7190 /* ShowMoreButtonStateProtocol.swift in Sources */,
 				6DFE17E823807CB9001D7190 /* ShowMoreButtonStateHide.swift in Sources */,
 				6DFE17F22380A8EC001D7190 /* UIView+Animation.swift in Sources */,
+				6D9E90672380C7F20019BA6E /* VenueDetailResult.swift in Sources */,
 				6DFE17AE237F96AB001D7190 /* Location.swift in Sources */,
 				6DFE17BE2380413B001D7190 /* CLLocation+Utils.swift in Sources */,
 			);
