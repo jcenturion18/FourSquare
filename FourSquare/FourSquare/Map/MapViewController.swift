@@ -83,6 +83,8 @@ extension MapViewController{
 
 extension MapViewController : InMapDetailPresenterDelegate{
     func navigateToVenueDetail(forVenue venue: Venue) {
-        navigationController?.pushViewController(DetailVenueViewController(), animated: true)
+        
+        let VC = DetailVenueViewController(venue: venue)
+        navigationController?.pushViewController(VC, animated: true)
     }
 }
