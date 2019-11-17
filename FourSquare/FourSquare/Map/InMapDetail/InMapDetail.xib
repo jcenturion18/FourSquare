@@ -28,11 +28,15 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-6I-4mx" userLabel="More info">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-6I-4mx" userLabel="More info">
                     <rect key="frame" x="325.5" y="190" width="72.5" height="21"/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.20392156862745098" green="0.51372549019607838" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="30c-9m-Sk5" appends="YES" id="k9r-7E-6C1"/>
+                    </connections>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,12 +56,14 @@
             <viewLayoutGuide key="safeArea" id="bLc-IE-qAb"/>
             <connections>
                 <outlet property="additionalInfoLabel" destination="b3X-Yf-9mq" id="z8M-tk-Jw6"/>
-                <outlet property="moreInfoTap" destination="nG7-9O-0Zl" id="hxW-it-t9G"/>
                 <outlet property="titleLabel" destination="a5l-6w-XxT" id="u8l-kA-1hx"/>
-                <outletCollection property="gestureRecognizers" destination="nG7-9O-0Zl" appends="YES" id="RTs-uL-BOc"/>
             </connections>
             <point key="canvasLocation" x="186.95652173913044" y="392.74553571428572"/>
         </view>
-        <tapGestureRecognizer id="nG7-9O-0Zl"/>
+        <tapGestureRecognizer id="30c-9m-Sk5">
+            <connections>
+                <action selector="moreInfoTap:" destination="iN0-l3-epB" id="JHN-ai-gLY"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

@@ -8,16 +8,23 @@
 
 import UIKit
 
+protocol InMapDetailDelegate {
+    func moreInfoTapped() -> Void
+}
+
 class InMapDetail: UIView {
 
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var additionalInfoLabel: UILabel!
     
-    @IBOutlet weak var moreInfoTap: UITapGestureRecognizer!
-    
+    var delegate:InMapDetailDelegate?
+        
     func update(withVenue venue:Venue) -> Void {
         titleLabel.text = venue.name
         additionalInfoLabel.text = venue.location.formattedAddress?.joined(separator: "\n")
+    }
+    @IBAction func moreInfoTap(_ sender: Any) {
+        delegate?.moreInfoTapped()
     }
 }
