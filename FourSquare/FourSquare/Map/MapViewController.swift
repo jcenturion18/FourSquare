@@ -41,7 +41,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         mapPresenter.mapView = mapView
         mapPresenter.showMoreViewContainer = showMoreViewContainer
-        inMapDetailPresenter.setUp(parentView: view)
+        inMapDetailPresenter.setUp(parentView: view, delegate: self)
         locationService.requestAuth()
     }
     
@@ -81,3 +81,8 @@ extension MapViewController{
     }
 }
 
+extension MapViewController : InMapDetailPresenterDelegate{
+    func navigateToVenueDetail(forVenue venue: Venue) {
+        navigationController?.pushViewController(DetailVenueViewController(), animated: true)
+    }
+}
