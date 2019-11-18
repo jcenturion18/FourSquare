@@ -16,6 +16,7 @@ struct Venue: Codable {
     let ratingSignals: Double?
     let description: String?
     let bestPhoto:BestPhoto?
+    let likes:Likes?
 }
 
 struct Contact: Codable {
@@ -28,4 +29,8 @@ struct Contact: Codable {
 struct BestPhoto: Codable {
     let prefix: String
     let suffix: String
+}
+
+struct Likes: Codable {
+    let summary: String
 }
