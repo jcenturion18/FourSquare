@@ -12,6 +12,9 @@ import Alamofire
 
 class FourSquareService {
     let sessionManager:SessionManager
+    
+    let clientId = "FS1TPI1BMSFSJ020DA4NH1PXD1HW50GYDQYYGQMTLPPCV1YE"
+    let clientSecret = "55V42KYJCFKS0AH3EFGI4RKGURAS2KBH3MZG2OV1PE5HONQV"
 
     init(sessionManager:SessionManager = SessionManager.default) {
         self.sessionManager = sessionManager
@@ -22,8 +25,8 @@ class FourSquareService {
         
         var params = Parameters()
         params["ll"] = location.toString()
-        params["client_id"] = "FS1TPI1BMSFSJ020DA4NH1PXD1HW50GYDQYYGQMTLPPCV1YE"
-        params["client_secret"] = "55V42KYJCFKS0AH3EFGI4RKGURAS2KBH3MZG2OV1PE5HONQV"
+        params["client_id"] = clientId
+        params["client_secret"] = clientSecret
         params["v"] = actualDate()
         
         sessionManager.request("https://api.foursquare.com/v2/venues/search", method: .get, parameters: params).responseJSON { response in
@@ -49,8 +52,8 @@ class FourSquareService {
     
     func fetchVenueDetails(forId id:String, completion: @escaping (Venue?, Error?) -> Void ){
         var params = Parameters()
-        params["client_id"] = "FS1TPI1BMSFSJ020DA4NH1PXD1HW50GYDQYYGQMTLPPCV1YE"
-        params["client_secret"] = "55V42KYJCFKS0AH3EFGI4RKGURAS2KBH3MZG2OV1PE5HONQV"
+        params["client_id"] = clientId
+        params["client_secret"] = clientSecret
         params["v"] = actualDate()
         
         let path = "https://api.foursquare.com/v2/venues/\(id)"
