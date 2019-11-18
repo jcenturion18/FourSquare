@@ -11,24 +11,24 @@ import UIKit
 class DetailVenuePresenter {
 
     private var builders:Array<DetailVenueBuilderProtocol>
+    private var stackView:UIStackView?
     init() {
         builders = []
+        builders.append(DetailVenueMainPhotoBuilder())
         builders.append(DetailVenueTitleBuilder())
+        builders.append(DetailVenueDescriptionBuilder())
+        builders.append(DetailVenueLikesBuilder())
     }
     
-    func setUp(basicVenue venue:Venue, stackView:UIStackView) -> Void {
-        
-        stackView.spacing = 8
-        
+    func setUp(stackView:UIStackView) -> Void {
+        self.stackView = stackView
+    }
+    func updateView(withVenue venue:Venue) -> Void {
         let views:[UIView] = builders.compactMap { (builder) -> UIView? in
             return builder.build(venue: venue)
         }
         views.forEach { (view) in
-            stackView.addArrangedSubview(view)
+            stackView?.addArrangedSubview(view)
         }
-        
-    }
-    func updateView(withVenue venue:Venue) -> Void {
-        
     }
 }
