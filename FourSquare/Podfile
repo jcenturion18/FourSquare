@@ -6,6 +6,7 @@ target 'FourSquare' do
 
   # Pods for FourSquare
   pod 'Alamofire', '4.9.1'
+  pod 'Nuke', '~> 8.0'
   pod 'PureLayout'
 
 
