@@ -15,6 +15,7 @@ struct Venue: Codable {
     let ratingColor: String?
     let ratingSignals: Double?
     let description: String?
+    let bestPhoto:BestPhoto?
 }
 
 struct Contact: Codable {
@@ -22,4 +23,9 @@ struct Contact: Codable {
     let formattedPhone: String?
     let twitter: String?
     let instagram: String?
+}
+
+struct BestPhoto: Codable {
+    let prefix: String
+    let suffix: String
 }
