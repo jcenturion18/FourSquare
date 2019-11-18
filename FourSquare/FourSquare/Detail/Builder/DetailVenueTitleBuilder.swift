@@ -10,9 +10,8 @@ import UIKit
 
 class DetailVenueTitleBuilder: DetailVenueBuilderProtocol {
     func build(venue: Venue) -> UIView? {
-        let title:UILabel = UILabel()
-        title.text = venue.name
-        title.font = UIFont.boldSystemFont(ofSize: 18)
-        return title
+        let titleView:DetailVenueTitle = DetailVenueTitle.loadNib()
+        titleView.setTitle(venue.name)
+        return titleView
     }
 }
