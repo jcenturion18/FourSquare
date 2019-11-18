@@ -12,10 +12,14 @@ class DetailVenueViewController: UIViewController {
 
     let fourSquareService:FourSquareService
     var venue:Venue
+    private(set) var venuePresenter:DetailVenuePresenter?
     
-    init(venue:Venue, fourSquareService:FourSquareService = FourSquareService()){
+    @IBOutlet weak var stackView: UIStackView!
+    init(venue:Venue, fourSquareService:FourSquareService = FourSquareService(),
+         venuePresenter:DetailVenuePresenter = DetailVenuePresenter()){
         self.fourSquareService = fourSquareService
         self.venue = venue
+        self.venuePresenter = venuePresenter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,6 +29,7 @@ class DetailVenueViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        venuePresenter?.setUp(basicVenue: venue, stackView: stackView)
         self.fourSquareService.fetchVenueDetails(forId: venue.id) { (venue, error) in
             if let venue = venue{
                 debugPrint(venue)
