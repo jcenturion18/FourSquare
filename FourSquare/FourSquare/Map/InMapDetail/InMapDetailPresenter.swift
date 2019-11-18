@@ -25,7 +25,7 @@ class InMapDetailPresenter {
         self.parentView = parent
         self.delegate = delegate
         
-        detailView = Bundle.main.loadNibNamed( String(describing: InMapDetail.self), owner: nil, options: nil)?.first as? InMapDetail
+        detailView = InMapDetail.loadNib()
         
         if let detailView = detailView{
             detailView.delegate = self
