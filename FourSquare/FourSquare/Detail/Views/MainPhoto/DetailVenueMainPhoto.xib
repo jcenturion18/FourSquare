@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DetailVenueMainPhoto" customModule="FourSquare" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="429" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VenuePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="uMy-LK-deE">
+                    <rect key="frame" x="0.0" y="0.0" width="429" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="fCs-1v-l7o"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="uMy-LK-deE" secondAttribute="bottom" id="4ND-5Z-6wD"/>
+                <constraint firstItem="uMy-LK-deE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MAy-ZM-2AJ"/>
+                <constraint firstAttribute="trailing" secondItem="uMy-LK-deE" secondAttribute="trailing" id="Xh2-Pn-8k4"/>
+                <constraint firstItem="uMy-LK-deE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jum-Xo-jav"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageViewContainer" destination="uMy-LK-deE" id="shm-VR-e23"/>
+            </connections>
+            <point key="canvasLocation" x="70.28985507246378" y="-99.107142857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="VenuePlaceHolder" width="133.33332824707031" height="100"/>
+    </resources>
+</document>
