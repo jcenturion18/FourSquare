@@ -22,8 +22,6 @@ class DetailVenueRankingBuilder: DetailVenueBuilderProtocol {
         }
         
         let detailView:DetailVenueRanking = DetailVenueRanking.loadNib()
-        detailView.titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        
         views.forEach { (view) in
             detailView.stackView?.addArrangedSubview(view)
         }
