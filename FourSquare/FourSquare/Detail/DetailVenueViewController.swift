@@ -32,7 +32,6 @@ class DetailVenueViewController: UIViewController {
         venuePresenter?.setUp(stackView: stackView)
         self.fourSquareService.fetchVenueDetails(forId: venue.id) { (venue, error) in
             if let venue = venue{
-                debugPrint(venue)
                 self.venuePresenter?.updateView(withVenue: venue)
             }
         }
