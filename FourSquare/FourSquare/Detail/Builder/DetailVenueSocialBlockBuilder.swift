@@ -21,7 +21,7 @@ class DetailVenueSocialBlockBuilder: DetailVenueBuilderProtocol {
             return nil
         }
         
-        let detailView:VenueDetailSocialBlock = VenueDetailSocialBlock.loadNib()
+        let detailView:DetailVenueSocialBlock = DetailVenueSocialBlock.loadNib()
         views.forEach { (view) in
             detailView.stackView?.addArrangedSubview(view)
         }
