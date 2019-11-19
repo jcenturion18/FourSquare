@@ -16,8 +16,10 @@ class DetailVenuePresenter {
         builders = []
         builders.append(DetailVenueMainPhotoBuilder())
         builders.append(DetailVenueTitleBuilder())
+        builders.append(DetailVenueAddressBuilder())
         builders.append(DetailVenueDescriptionBuilder())
         builders.append(DetailVenueRankingBuilder())
+        builders.append(DetailVenueSocialBlockBuilder())
     }
     
     func setUp(stackView:UIStackView) -> Void {
