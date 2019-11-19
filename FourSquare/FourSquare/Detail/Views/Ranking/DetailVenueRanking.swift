@@ -9,7 +9,11 @@
 import UIKit
 
 class DetailVenueRanking: UIView {
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+    }
 }
