@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import MapKit
 @testable import FourSquare
 
 class InMapDetailPresenterTests: XCTestCase {
@@ -14,9 +15,9 @@ class InMapDetailPresenterTests: XCTestCase {
     func testShowDetail() {
         let inMapDetailPresenter = InMapDetailPresenter()
         let parent = UIView()
-        inMapDetailPresenter.setUp(parentView: parent)
+        inMapDetailPresenter.setUp(parentView: parent, delegate: InMapDetailPresenterDelegateMock())
         
-        let venue = Venue(id: "id", name: "Name", location: Location(lat: 40, lng: 40, address: nil, city: nil, state: nil, country: nil, formattedAddress: ["Street", "Country"]))
+        let venue = Venue(id: "id", name: "Name", location: Location(lat: 40, lng: 40, address: nil, city: nil, state: nil, country: nil, formattedAddress: ["Street", "Country"]), contact: nil, rating: nil, ratingColor: nil, ratingSignals: nil, description: nil, bestPhoto: nil, likes: nil)
         inMapDetailPresenter.showDetail(withVenue: venue)
         
         XCTAssertEqual(inMapDetailPresenter.detailView?.titleLabel.text, "Name")
@@ -29,7 +30,7 @@ class InMapDetailPresenterTests: XCTestCase {
     func testHideDetail() {
         let inMapDetailPresenter = InMapDetailPresenter()
         let parent = UIView()
-        inMapDetailPresenter.setUp(parentView: parent)
+        inMapDetailPresenter.setUp(parentView: parent, delegate: InMapDetailPresenterDelegateMock())
         
         inMapDetailPresenter.hideDetail()
         
@@ -38,4 +39,9 @@ class InMapDetailPresenterTests: XCTestCase {
         
     }
 
+}
+
+class InMapDetailPresenterDelegateMock: InMapDetailPresenterDelegate{
+    func navigateToVenueDetail(forVenue venue: Venue) {
+    }
 }
