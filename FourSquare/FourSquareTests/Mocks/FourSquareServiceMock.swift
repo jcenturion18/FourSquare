@@ -12,7 +12,30 @@ import MapKit
 
 class FourSquareServiceMock: FourSquareService {
     override func fetchVenues(forLocation location: CLLocation, completion: @escaping ([Venue]?, Error?) -> Void) {
-        let venue = Venue(id: "id", name: "name", location: Location(lat: 40, lng: 40, address: nil, city: nil, state: nil, country: nil, formattedAddress:nil))
+        let venue = VenueMock.venue()
         completion([venue], nil)
+    }
+    
+    override func fetchVenueDetails(forId id: String, completion: @escaping (Venue?, Error?) -> Void) {
+        let venue = loadVenueMock(from: "VenueDetail")
+        completion(venue, nil)
+    }
+}
+
+
+extension FourSquareServiceMock {
+    func loadVenueMock(from fileNane:String)->Venue?{
+        
+        if let path = Bundle.main.path(forResource: fileNane, ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let JSON = try JSONDecoder().decode(VenueDetailResult.self, from: data)
+                return JSON.response.venue
+                
+            } catch {
+                // handle error
+            }
+        }
+        return nil
     }
 }
