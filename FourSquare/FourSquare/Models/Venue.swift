@@ -24,6 +24,7 @@ struct Contact: Codable {
     let formattedPhone: String?
     let twitter: String?
     let instagram: String?
+    let facebook: String?
 }
 
 struct BestPhoto: Codable {
