@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (4.9.1)
-  - Nuke (8.3.1)
-  - PureLayout (3.1.5)
+  - Nuke (8.4.1)
+  - PureLayout (3.1.9)
 
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
@@ -9,16 +9,16 @@ DEPENDENCIES:
   - PureLayout
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - Nuke
     - PureLayout
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Nuke: 85fb80f8df0cb26c28d2f4e0cb7fb93bcd6548d3
-  PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
+  Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
+  PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
 
 PODFILE CHECKSUM: df382c6dcdf065260c33503d183e820be30d1a3c
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.10.1
